@@ -1,0 +1,12 @@
+doctype html
+html(lang='en')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  block title
+  include ../includes/scripts
+  block extra_scripts
+  body.signBody
+    .customRow
+      include ../includes/header
+      .container
+        block content
+include ../includes/footer

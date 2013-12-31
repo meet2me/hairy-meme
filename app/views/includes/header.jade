@@ -1,0 +1,61 @@
+header#header
+  nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation', style="box-shadow:0px 2px 12px #AAA;")
+    .container
+      .navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='/') Project Name
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        ul.nav.navbar-nav.navbar-right.visible-lg.visible-md.visible-sm
+          li.if1(class=(url === '/link' ? 'active if1-active' : ''))
+            a(href='/') 
+              span.glyphicon.glyphicon-dashboard&nbsp;
+              |Link
+          li.if1
+            a(href='#')
+              span.glyphicon.glyphicon-list-alt&nbsp;
+              |Link 2
+          li.if1
+            a(href='#')
+              span.glyphicon.glyphicon-envelope&nbsp;
+              |Link 3
+          li
+            a.dropdown-toggle(type='button', data-toggle='dropdown', style='cursor:pointer')
+                span.glyphicon.glyphicon-cog&nbsp;
+                | Account&nbsp;
+                span.caret
+              ul.dropdown-menu(role='menu', style='left:0;border-top-right-radius: 4px;border-top-left-radius: 4px;')
+                li(style='margin-right:0', class=(url === '/account' ? 'active active' : ''))
+                  a(href='/account', style='margin-bottom:1px') 
+                    span.glyphicon.glyphicon-user&nbsp;
+                    |Profile
+                li(style='margin-right:0')
+                  if (session)
+                    a(href='/logout')
+                      span.glyphicon.glyphicon-log-out&nbsp;
+                      |Logout
+                  else
+                    a(href='/login') Login
+
+        ul.nav.navbar-nav.navbar-right.visible-xs
+          li(class=(url === '/' ? 'active' : ''))
+            a(href='#')
+              |Dashboard
+          li(class=(url === '/' ? 'active' : ''))
+            a(href='#')
+              |History
+          li(class=(url === '/' ? 'active' : ''))
+            a(href='#') 
+              |Profile
+          li(class=(url === '/' ? 'active' : ''))
+            a(href='#')
+              |Contact
+          li
+            if (session)
+              a(href='/logout')
+                |Logout&nbsp;
+            else
+              a(href='/login') Login

@@ -1,0 +1,40 @@
+extends layouts/default
+
+block title
+  title Contact
+block content
+  .content.navbarmargin
+    .container
+      h2 Reach Us
+      br
+      h4 Any Question ? Queries ? (Get in Touch).
+      br
+      form.titleName(action='', method='post')
+        label(for='name') Name <sup>*</sup>
+        br
+        .row
+          .col-md-9
+            input.form-control(type='text', name='name', id='name', required)
+        br
+        label(for='email') Email <sup>*</sup>
+        br
+        .row
+          .col-md-9
+            input.form-control(type='email', name='email', id='email', required)
+        br
+        label(for='sub') Subject 
+        br
+        .row
+          .col-md-9
+            input.form-control(type='text', name='sub', id='sub')
+        br
+        label(for='msg') Message <sup>*</sup>
+        br
+        .row
+          .col-md-9
+            textarea.form-control(rows='5', style='resize:vertical', name='msg', id='msg', required)
+        br
+        input.btn.btn-primary(type='submit', value='Send')
+
+        
+
